@@ -3,8 +3,12 @@ import { Component } from '@angular/core';
 
 // Se importa el servicio para poder usarlo y se pasa al contructor
 import { TareasService } from '../../services/tareas.services';
+import { Lista } from '../../models/lista.model'
 
-import { Lista } from '../../models'
+// En IONIC NacController nos permite navegar
+import { NavController } from 'ionic-angular/umd';
+
+import { AgregarPage } from '../agregar/agregar.component';
 
 
 @Component ({
@@ -12,10 +16,10 @@ import { Lista } from '../../models'
     templateUrl: 'pendientes.component.html'
 })
 
-
 export class PendientesPage {
 
-    constructor(public tareasService: TareasService) {
+    constructor(public tareasService: TareasService,
+                private navCtrl: NavController) {
 
     }
 
@@ -24,5 +28,9 @@ export class PendientesPage {
         console.log(lista);
     }
 
+    agregarLista() {
+        // Se utiliza el método push para agregar una página al stack de páginas
+        this.navCtrl.push(AgregarPage);
+    }
 
 }

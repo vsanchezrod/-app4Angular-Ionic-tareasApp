@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 // Componentes
 import { PendientesPage } from '../pages/pendientes/pendientes.component';
 import { CompletadosPage } from '../pages/completados/completados.component';
+import { AgregarPage } from '../pages/agregar/agregar.component';
 
 // Propias de Ionic
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,12 +17,14 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 // Servicios
 import { TareasService } from '../services/tareas.services';
 
+
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
     PendientesPage,
-    CompletadosPage
+    CompletadosPage,
+    AgregarPage
   ],
   imports: [
     BrowserModule,
@@ -32,7 +35,8 @@ import { TareasService } from '../services/tareas.services';
     MyApp,
     TabsPage,
     PendientesPage,
-    CompletadosPage
+    CompletadosPage,
+    AgregarPage
   ],
   providers: [
     StatusBar,
