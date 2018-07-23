@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { Lista } from '../../models';
+import { TareasService } from '../../services/tareas.services';
 
 @Component ({
     selector: 'page-completados',
@@ -7,4 +9,13 @@ import { Component } from '@angular/core';
 
 export class CompletadosPage {
 
+    listas: Lista[];
+
+    constructor (public tareasService: TareasService) {
+
+    }
+
+    listaSeleccionada(lista: Lista){
+        console.log(lista);
+    }
 }

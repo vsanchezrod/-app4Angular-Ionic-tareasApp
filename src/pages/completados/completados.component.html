@@ -1,12 +1,18 @@
 <!-- ion-header es la cabecera-->
 <ion-header>
-    <ion-navbar>
+    <ion-navbar color="primary">
+        <!-- color= primary es de ionic -->
         <ion-title>Tareas Completadas</ion-title>
     </ion-navbar>
 </ion-header>
 
 <!-- ion-content es el contenido de la página-->
-<ion-content padding>
-    <h2>Hola Completadas!</h2>
+<ion-content>
+    <img src="../../assets/imgs/completados.jpg" alt="Completados">
+    <ion-list>
+        <button ion-item *ngFor="let lista of tareasService.listas" (click)="listaSeleccionada(lista)">
+              {{ lista.titulo }}
+            </button>
+    </ion-list>
 
 </ion-content>
