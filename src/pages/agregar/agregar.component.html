@@ -26,13 +26,24 @@
             Tareas por hacer
         </ion-list-header>
 
+        <!-- Se utiliza ion-item-sliding para poder desplazar el item hace un lado y que salgan más opciones-->
+        <ion-item-sliding *ngFor="let item of lista.items; let i = index" class="animated fadeInDown">
 
-        <button ion-item detail-none class="animated fadeInDown" *ngFor="let item of lista.items" (click)="actualizarEstado(item)">
-            <!-- Documentación IONI ICON-->
-            <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start></ion-icon>
-            <ion-icon *ngIf="!item.completado" name="square-outline" item-start></ion-icon>
-            {{ item.descripcion }}
-        </button>
+            <button ion-item detail-none (click)="actualizarEstado(item)">
+                <!-- Documentación IONI ICON-->
+                <ion-icon *ngIf="item.completado" name="checkbox-outline" item-start></ion-icon>
+                <ion-icon *ngIf="!item.completado" name="square-outline" item-start></ion-icon>
+                {{ item.descripcion }}
+            </button>
+
+            <!-- En side se puede poner right o left en función del diseño q se quiera-->
+            <ion-item-options side="right">
+                <button ion-button icon-only color="danger" (click)="borrarTarea(i)">
+                        <ion-icon name="close"></ion-icon>
+                </button>
+            </ion-item-options>
+
+        </ion-item-sliding>
 
     </ion-list>
 

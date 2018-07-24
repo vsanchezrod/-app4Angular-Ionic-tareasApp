@@ -47,4 +47,9 @@ export class AgregarPage {
         // Cuando se haga click se cambiará el estado de completado o no en función del valor actual
         item.completado = !item.completado;
     }
+
+    borrarTarea(i: number) {
+        //Borrar el item de la lista. Método splice recibe el elemento para empezar a borrar, y cuantos elementos a borrar
+        this.lista.items.splice(i,1);
+    }
 }
