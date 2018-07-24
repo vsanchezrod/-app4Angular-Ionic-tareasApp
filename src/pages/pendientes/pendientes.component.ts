@@ -3,13 +3,11 @@ import { Component } from '@angular/core';
 
 // Se importa el servicio para poder usarlo y se pasa al contructor
 import { TareasService } from '../../services/tareas.services';
-import { Lista } from '../../models/lista.model'
+import { Lista } from '../../models/lista.model';
 
 // En IONIC NacController nos permite navegar
-import { NavController } from 'ionic-angular/umd';
-
+import { NavController } from 'ionic-angular';
 import { AgregarPage } from '../agregar/agregar.component';
-
 
 @Component ({
     selector: 'page-pendientes',
