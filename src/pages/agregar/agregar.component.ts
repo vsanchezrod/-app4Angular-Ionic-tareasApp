@@ -25,6 +25,9 @@ export class AgregarPage {
 
         // El constructor de la lista solo necesitaba el título
         this.lista = new Lista (titulo);
+
+        // Cuando se crea una lista debemos agregarla utilizando el servicio
+        this.tareasService.agregarLista(this.lista);
     }
 
     agregarItem() {

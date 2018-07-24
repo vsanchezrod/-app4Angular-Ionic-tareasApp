@@ -8,19 +8,45 @@ export class TareasService {
 
     // Propiedades
     listas: Lista[] = [];
-
+    
     constructor() {
+
+        // Cuando se inicialice el servicio se carga el local storage
+        this.cargarStorage();
+        
         console.log('Servicio listo para usarse!');
 
-        // Se crea una lista
-        const lista1 = new Lista('Aprender Angular');
-        const lista2 = new Lista('Hacer proyecto FP en Angular');
-
-        // Incluimos las lista en la propiedad
-        this.listas.push(lista1, lista2);
-
-        console.log(this.listas);
     }
 
+    // Método para agregar lista
+    agregarLista(lista: Lista) {
+        
+        // Agrego una lista al array de listas
+        this.listas.push(lista);
 
+        // Cuando se crea una lista se guarda en el local storage
+        this.guadarStorage();
+    }
+
+    // Persistencia utilizando Local Storage
+
+    // Método para guardar datos
+    guadarStorage() {
+        
+        localStorage.setItem('data', JSON.stringify(this.listas));
+    }
+
+    // Método para cargar a storage
+    cargarStorage() {
+        
+        // Verificar que existen los datos en el local storage
+        if (localStorage.getItem('data')){
+            // Si existe, le asignamos a lista el valor del local storage. Se usa JSON.parse para que lo convierta a objeto de JS
+            this.listas = JSON.parse(localStorage.getItem('data'));
+        }
+        else {
+            this.listas = [];
+        }
+
+    }
 }
