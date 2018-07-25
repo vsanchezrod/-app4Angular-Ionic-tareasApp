@@ -13,7 +13,7 @@
     <!-- Componente Lista de ionic-->
     <ion-list>
 
-        <ion-item-sliding *ngFor="let lista of tareasService.listas">
+        <ion-item-sliding *ngFor="let lista of tareasService.listas | filtroCompletado: false">
             <button ion-item (click)="listaSeleccionada(lista)">
               {{ lista.titulo }}
               
