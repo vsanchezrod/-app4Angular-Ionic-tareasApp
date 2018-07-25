@@ -5,10 +5,13 @@ import { MyApp } from './app.component';
 
 import { TabsPage } from '../pages/tabs/tabs';
 
-// Componentes
+// Pages
 import { PendientesPage } from '../pages/pendientes/pendientes.component';
 import { CompletadosPage } from '../pages/completados/completados.component';
 import { AgregarPage } from '../pages/agregar/agregar.component';
+
+// Componentes
+import { ListasComponent } from '../components/listas.component';
 
 // Propias de Ionic
 import { StatusBar } from '@ionic-native/status-bar';
@@ -28,7 +31,8 @@ import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completa
     PendientesPage,
     CompletadosPage,
     AgregarPage,
-    FiltroCompletadoPipe
+    FiltroCompletadoPipe,
+    ListasComponent
   ],
   imports: [
     BrowserModule,

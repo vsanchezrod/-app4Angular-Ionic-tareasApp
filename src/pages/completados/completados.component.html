@@ -9,10 +9,8 @@
 <!-- ion-content es el contenido de la página-->
 <ion-content>
     <img src="../../assets/imgs/completados.jpg" alt="Completados">
-    <ion-list>
-        <button ion-item *ngFor="let lista of tareasService.listas | filtroCompletado: true" (click)="listaSeleccionada(lista)">
-              {{ lista.titulo }}
-            </button>
-    </ion-list>
+
+    <!-- Se utiliza el componente listas y se envía el valor de la propiedad "completada" al componente hijo listas-->
+    <app-listas [completada]="true"></app-listas>
 
 </ion-content>

@@ -25,18 +25,9 @@ export class PendientesPage {
                 private alertCtrl: AlertController) {
 
     }
-
-    // Crear método
-    listaSeleccionada(lista: Lista) {
         
-        this.navCtrl.push(AgregarPage, {
-            titulo: lista.titulo,
-            lista: lista
-        });
-    }
-
     agregarLista() {
-                
+        
         // Se crea una alerta con el objeto alertCtrl y el método create y se manda en el método un objeto de configuración
         const alerta = this.alertCtrl.create({
             title: 'Nueva lista',
@@ -68,13 +59,6 @@ export class PendientesPage {
         // Para presentar la alerta
         alerta.present();
 
-    }
-
-    // Método para borrar una lista
-    borrarLista(lista: Lista) {
-    
-        //Borrar la lista. 
-        this.tareasService.borrarLista(lista);
     }
   
 

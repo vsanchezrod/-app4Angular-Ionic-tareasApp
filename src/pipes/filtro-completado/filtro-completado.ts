@@ -2,8 +2,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 
 import { Lista } from '../../models'
 
-
-
 @Pipe({
   name: 'filtroCompletado',
   pure: false
@@ -17,8 +15,5 @@ export class FiltroCompletadoPipe implements PipeTransform {
     return listas = listas.filter( lista => {
       return lista.completada === completada;
     })
-
-
-
   }
 }
