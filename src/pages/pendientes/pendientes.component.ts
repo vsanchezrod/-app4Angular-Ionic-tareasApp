@@ -28,7 +28,11 @@ export class PendientesPage {
 
     // Crear método
     listaSeleccionada(lista: Lista) {
-        console.log(lista);
+        
+        this.navCtrl.push(AgregarPage, {
+            titulo: lista.titulo,
+            lista: lista
+        });
     }
 
     agregarLista() {
@@ -65,5 +69,13 @@ export class PendientesPage {
         alerta.present();
 
     }
+
+    // Método para borrar una lista
+    borrarLista(lista: Lista) {
+    
+        //Borrar la lista. 
+        this.tareasService.borrarLista(lista);
+    }
+  
 
 }

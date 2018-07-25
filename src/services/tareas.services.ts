@@ -49,4 +49,15 @@ export class TareasService {
         }
 
     }
+
+    // Método para borrar lista
+    borrarLista(lista: Lista) {
+        
+        // Mediante un filtrado del array de listas, se guardan en this.listas todas las listas menos la del ID que se le esté pasando
+        this.listas = this.listas.filter(listaData => {
+            return listaData.id !== lista.id;
+        })
+        
+        this.guadarStorage();
+    }
 }
