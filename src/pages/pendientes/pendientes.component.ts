@@ -3,15 +3,11 @@ import { Component } from '@angular/core';
 
 // Se importa el servicio para poder usarlo y se pasa al contructor
 import { TareasService } from '../../services/tareas.services';
-import { Lista } from '../../models/lista.model';
 import { AgregarPage } from '../agregar/agregar.component';
 
 // En IONIC NacController nos permite navegar a otra página
 // En IONIC AlertController permite crear alertas o pop-ups
 import { NavController, AlertController } from 'ionic-angular';
-
-
-
 
 @Component ({
     selector: 'page-pendientes',

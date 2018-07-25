@@ -1,17 +1,27 @@
 <!-- Componente Lista de ionic-->
 <ion-list>
 
-    <ion-item-sliding *ngFor="let lista of tareasService.listas | filtroCompletado: completada">
-        <button ion-item (click)="listaSeleccionada(lista)">
-              {{ lista.titulo }}
-              
-              <!-- Para colocar una pequeña nota al final del elemento-->
-              <ion-note item-end>
-                  {{ lista.items.length }} items
-              </ion-note>
-            </button>
+    <!-- Mirar API DOCS de Ionic método close() del sliding-->
+    <ion-item-sliding #slidingItem *ngFor="let lista of tareasService.listas | filtroCompletado: completada">
 
+        <!-- Si desplazamos hacia la izquierda: EDITAR-->
         <ion-item-options side="left">
+            <button (click)="editarLista(lista, slidingItem)" ion-button icon-only color="info">
+                    <ion-icon name="create"></ion-icon>
+            </button>
+        </ion-item-options>
+
+        <button ion-item (click)="listaSeleccionada(lista)">
+            {{ lista.titulo }}
+              
+            <!-- Para colocar una pequeña nota al final del elemento-->
+            <ion-note item-end>
+                {{ lista.items.length }} items
+            </ion-note>
+        </button>
+
+        <!-- Si desplazamos hacia la derecha: BORRADO-->
+        <ion-item-options side="right">
             <button (click)="borrarLista(lista)" ion-button icon-only color="danger">
                         <ion-icon name="close"></ion-icon>
                 </button>
